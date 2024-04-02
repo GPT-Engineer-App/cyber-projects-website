@@ -1,6 +1,5 @@
 import React from "react";
-import { Box, Heading, Text, VStack, Grid, Image, Link, Container, Button, useColorMode } from "@chakra-ui/react";
-import { FaSun, FaMoon } from "react-icons/fa";
+import { Box, Heading, Text, VStack, Grid, Image, Link, Container } from "@chakra-ui/react";
 
 const projects = [
   {
