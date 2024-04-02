@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Heading, Text, VStack, Grid, Image, Link, Container } from "@chakra-ui/react";
+import { Box, Heading, Text, VStack, Grid, Image, Link, Container, useColorModeValue } from "@chakra-ui/react";
+import DarkModeToggle from "../components/DarkModeToggle";
 
 const projects = [
   {
@@ -44,13 +45,16 @@ const Index = () => {
   return (
     <Box>
       <Container maxW="container.lg" py={8}>
-        <Heading as="h1" size="2xl" mb={8} textAlign="center">
-          Cybersecurity Projects
-        </Heading>
+        <Box display="flex" justifyContent="space-between" alignItems="center" mb={8}>
+          <Heading as="h1" size="2xl">
+            Cybersecurity Projects
+          </Heading>
+          <DarkModeToggle />
+        </Box>
         <Grid templateColumns={["1fr", "repeat(2, 1fr)", "repeat(3, 1fr)"]} gap={8}>
           {projects.map((project, index) => (
             <Link key={index} href={project.link} _hover={{ textDecoration: "none" }}>
-              <VStack p={6} borderWidth={1} borderRadius="lg" _hover={{ shadow: "md" }}>
+              <VStack p={6} borderWidth={1} borderRadius="lg" _hover={{ shadow: "md" }} bg={useColorModeValue("white", "gray.800")}>
                 <Image src={project.image} alt={project.title} mb={4} />
                 <Heading as="h3" size="md" mb={2}>
                   {project.title}
